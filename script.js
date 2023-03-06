@@ -66,29 +66,29 @@ ScrollReveal({
     // send email function
     
     function sendEmail(){
+       
         Email.send({
             Host : "smtp.elasticemail.com",
-            Username : "godeajit95@gmail.com",
-            Password : "8A286B617BCA22EE6EB02232EF77948A1908",
-            To : 'godeajit71@gmail.com',
-            From : "godeajit95@gmail.com",
-            Subject : document.getElementById("subject"),
+            Username : "godeajit99@gmail.com",
+            Password : "F610A4C35E611F85527672B3E751D33631E7",
+            To : "godeajit71@gmail.com",
+            From :"godeajit99@gmail.com",
+            Subject : "Contact Form Enquiry",
             Body : "Name: " +document.getElementById("name").value
             + "<br> Email :" +document.getElementById("email").value
             + "<br> Mobile No :" +document.getElementById("mobile").value
             + "<br> Message :" +document.getElementById("message").value
         }).then(
           message => Swal.fire(
-            'Good job!',
+            'Message Send Successfully!',
             'You clicked the button!',
             'success'
-          ).catch(
-            Swal.fire({
+          )
+        ).catch(
+            message =>Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
                 text: 'Something went wrong!',
-                footer: '<a href="">Why do I have this issue?</a>'
               })
-          )
-        );
+        )
     }
