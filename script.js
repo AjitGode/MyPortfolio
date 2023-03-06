@@ -68,9 +68,7 @@ ScrollReveal({
     function sendEmail(){
        
         Email.send({
-            Host : "smtp.elasticemail.com",
-            Username : "godeajit99@gmail.com",
-            Password : "F610A4C35E611F85527672B3E751D33631E7",
+            SecureToken:"3c6a9427-eb03-4d69-8749-4f7013e5c927",
             To : "godeajit71@gmail.com",
             From :"godeajit99@gmail.com",
             Subject : "Contact Form Enquiry",
