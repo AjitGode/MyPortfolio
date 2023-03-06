@@ -27,6 +27,10 @@ body {
     background: var(--bg-color);
     color: var(--text-color);
 }
+head .logo{
+    width: 50%;
+    height: 50%;
+}
 
 section {
     min-height: 100vh;
