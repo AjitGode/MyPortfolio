@@ -1,4 +1,4 @@
-
+//import Swal from 'sweetalert2/dist/sweetalert2.js'
 var typed = new Typed('.multiple-text',{
     strings:["Frontend Developer","Test Engineer"],
     typeSpeed:100,
@@ -61,3 +61,34 @@ ScrollReveal({
     ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin:'bottom' });
     ScrollReveal().reveal('.home-content h1, .about-img', { origin:'left' });
     ScrollReveal().reveal('.home-content p, .about-content', { origin:'right' });
+
+
+    // send email function
+    
+    function sendEmail(){
+        Email.send({
+            Host : "smtp.elasticemail.com",
+            Username : "godeajit95@gmail.com",
+            Password : "8A286B617BCA22EE6EB02232EF77948A1908",
+            To : 'godeajit71@gmail.com',
+            From : "godeajit95@gmail.com",
+            Subject : document.getElementById("subject"),
+            Body : "Name: " +document.getElementById("name").value
+            + "<br> Email :" +document.getElementById("email").value
+            + "<br> Mobile No :" +document.getElementById("mobile").value
+            + "<br> Message :" +document.getElementById("message").value
+        }).then(
+          message => Swal.fire(
+            'Good job!',
+            'You clicked the button!',
+            'success'
+          ).catch(
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+                footer: '<a href="">Why do I have this issue?</a>'
+              })
+          )
+        );
+    }
