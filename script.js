@@ -63,6 +63,9 @@ ScrollReveal({
     ScrollReveal().reveal('.home-content p, .about-content', { origin:'right' });
 
 
+      // Current Year
+
+      document.getElementById("year").innerHTML = (new Date().getFullYear());
     // send email function
     
     function sendEmail(){

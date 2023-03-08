@@ -370,6 +370,10 @@ span {
 font-size: 1.6rem;
 }
 
+.footer-text p span{
+    color: #fff;
+}
+
 .footer-iconTop a{
     display: inline-flex;
     justify-content: center;
