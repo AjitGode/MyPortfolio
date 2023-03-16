@@ -433,6 +433,11 @@ font-size: 1.6rem;
    .footer{
     padding: 2rem 3%;
    }
+   #preloader{
+    background-size: 30%;
+    height: 100vh;
+    width: 100%;
+   }
 }
 
 @media (max-width:768px){
@@ -493,6 +498,11 @@ font-size: 1.6rem;
     .portfolio-container {
         grid-template-columns: repeat(2,1fr);
     }
+    #preloader{
+        background-size: 30%;
+        height: 100vh;
+        width: 100%;
+       }
 
 }
 
@@ -510,6 +520,11 @@ font-size: 1.6rem;
     .contact form .input-box input{
         width: 100%;
     }
+    #preloader{
+        background-size: 30%;
+        height: 100vh;
+        width: 100%;
+       }
 }
 
 @media (max-width:365px){
