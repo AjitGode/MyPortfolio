@@ -84,10 +84,10 @@ ScrollReveal({
             To : "godeajit71@gmail.com",
             From :"godeajit99@gmail.com",
             Subject : "Contact Form Enquiry",
-            Body : "Name: " +document.getElementById("name").value
-            + "<br> Email :" +document.getElementById("email").value
-            + "<br> Mobile No :" +document.getElementById("mobile").value
-            + "<br> Message :" +document.getElementById("message").value
+            Body : "<b>Name: </b>" +document.getElementById("name").value
+            + "<br> <b>Email :</b>" +document.getElementById("email").value
+            + "<br> <b>Mobile No :</b>" +document.getElementById("mobile").value
+            + "<br> <b>Message :</b>" +document.getElementById("message").value
         }).then(
           message => Swal.fire(
             'Message Send Successfully!',
