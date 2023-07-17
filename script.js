@@ -96,7 +96,15 @@ window.onscroll = () => {
         scrollTop.style.opacity = 0;
     }
 };
+// title Change when tab change
 
+let docTitle = document.title;
+window.addEventListener("blur",()=>{
+     document.title ="Come back :(";
+})
+window.addEventListener("focus",()=>{
+    document.title =docTitle;
+})
     // send email function
     
     function sendEmail(){
