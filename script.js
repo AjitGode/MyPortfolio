@@ -111,7 +111,7 @@ window.addEventListener("focus",()=>{
        
         Email.send({
             SecureToken:"9e192651-bd1f-4a91-8e93-acc266262c27",
-            To : "godeajit71@gmail.com",
+            To :"godeajit71@gmail.com",
             From :"godeajit99@gmail.com",
             Subject : "Contact Form Enquiry",
             Body : "<b>Name: </b>" +document.getElementById("name").value
