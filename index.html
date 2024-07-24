@@ -206,16 +206,16 @@
         <h2 class="heading">Contact <span>Me!</span></h2>
         <form onsubmit="sendEmail(); reset(); return false">
             <div class="input-box">
-                <input type="text" id="name" placeholder="Full Name" required>
-                <input type="email" id="email" placeholder="Email Address" required>
+                <input type="text" id="name" placeholder="Full Name" >
+                <input type="email" id="email" placeholder="Email Address" >
             </div>
 
             <div class="input-box">
-                <input type="number" id="mobile" placeholder="Mobile Number" required>
-                <input type="text" id="subject" placeholder="Email subject" required>
+                <input type="number" id="mobile" placeholder="Mobile Number">
+                <input type="text" id="subject" placeholder="Email subject">
             </div>
 
-            <textarea name="" id="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <textarea name="" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
             <input type="submit" value="Send Message" class="btn">
         </form>
     </section>
@@ -240,6 +240,7 @@
     <script src="https://smtpjs.com/v3/smtp.js"></script>
 
     <!-- Sweet Alert message -->
+   
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script.js"></script>
 </body>

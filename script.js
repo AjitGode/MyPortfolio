@@ -107,28 +107,90 @@ window.addEventListener("focus",()=>{
 })
     // send email function
     
-    function sendEmail(){
+    // function sendEmail(){
        
-        Email.send({
-            SecureToken:"9e192651-bd1f-4a91-8e93-acc266262c27",
-            To :"godeajit71@gmail.com",
-            From :"godeajit99@gmail.com",
-            Subject : "Contact Form Enquiry",
-            Body : "<b>Name: </b>" +document.getElementById("name").value
-            + "<br> <b>Email :</b>" +document.getElementById("email").value
-            + "<br> <b>Mobile No :</b>" +document.getElementById("mobile").value
-            + "<br> <b>Message :</b>" +document.getElementById("message").value
-        }).then(
-          message => Swal.fire(
-            'Message Send Successfully!',
-            'You clicked the button!',
-            'success'
-          )
-        ).catch(
-            message =>Swal.fire({
+    //     Email.send({
+    //          SecureToken :"6f21f854-545c-4777-8260-add40faf591f",
+    //         // Host : "smtp.elasticemail.com",
+    //         // Username : "godeajit95@gmail.com",
+    //         // Password : "AD9A209A23D06F21671327BC6103D1B64695",
+    //         To : 'godeajit95@gmail.com',
+    //         From :'godeajit95@gmail.com',
+    //         Subject : "Contact Form Enquiry",
+    //         Body : "<b>Name: </b>" +document.getElementById("name").value
+    //         + "<br> <b>Email :</b>" +document.getElementById("email").value
+    //         + "<br> <b>Mobile No :</b>" +document.getElementById("mobile").value
+    //         + "<br> <b>Message :</b>" +document.getElementById("message").value
+    //     }).then(
+    //       message => Swal.fire(
+    //         'Message Send Successfully!',
+    //         'You clicked the button!',
+    //         'success'
+    //       )
+    //     ).catch(
+    //         message =>Swal.fire({
+    //             icon: 'error',
+    //             title: 'Oops...',
+    //             text: 'Something went wrong!',
+    //           })
+    //     )
+    // }
+
+    function sendEmail() {
+        // Check if all fields are available
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let mobile = document.getElementById("mobile").value;
+        let message = document.getElementById("message").value;
+    
+        if (!name || !email || !mobile || !message) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Validation Error',
+                text: 'All fields are required!',
+            });
+            return;
+        }
+    
+        // Load Email.js SDK (if not already loaded)
+        if (typeof Email === "undefined") {
+            console.error("Email.js SDK not loaded!");
+            Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: 'Something went wrong!',
-              })
-        )
+                text: 'Email.js SDK not loaded!',
+            });
+            return;
+        }
+    
+        // Send email
+        Email.send({
+            SecureToken: "b48dc3e9-2c8c-435d-b6e4-d7b702ce78a1",
+            To:   'godeajit71@gmail.com',
+            From: 'godeajit71@gmail.com',
+            Subject: "Contact Form Enquiry",
+            Body: `<b>Name: </b>${name}<br>
+                   <b>Email: </b>${email}<br>
+                   <b>Mobile No: </b>${mobile}<br>
+                   <b>Message: </b>${message}`
+        }).then(
+            message => {
+                console.log("Email sent successfully:", message);
+                Swal.fire(
+                    'Message Sent Successfully!',
+                    'Your email has been sent.',
+                    'success'
+                );
+            }
+        ).catch(
+            error => {
+                console.error("Email sending failed:", error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong while sending the email!',
+                });
+            }
+        );
     }
+    
