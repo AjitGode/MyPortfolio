@@ -114,8 +114,18 @@ window.addEventListener("focus",()=>{
         let mobile = document.getElementById("mobile").value;
         let message = document.getElementById("message").value;
 
+        if (!name || !email || !mobile || !message) {
+            // Show an error message if any field is blank
+            Swal.fire({
+                icon: 'error',
+                title: 'Validation Error',
+                text: 'Please fill in all the fields before submitting!',
+            });
+            return false; // Prevent form submission
+        }
+
         let serviceId = 'service_7obmzqg';
-        let templateId = 'template_mv0vmdn';
+        let templateId = 'template_sdjh1u7';
         let PublicKey =  "8Eup-X-nZHCrR5RGg";
 
 
