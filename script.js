@@ -38,6 +38,7 @@ window.onscroll = ()=>{
              });
         };
     });
+
     //  sticky navbar //
 
     let header = document.querySelector('header');
@@ -126,6 +127,8 @@ window.addEventListener("focus",()=>{
                 icon: 'error',
                 title: 'Validation Error',
                 text: 'Please fill in all the fields before submitting!',
+                showConfirmButton: false,
+                timer: 3000
             });
             return false; // Prevent form submission
         }
@@ -137,6 +140,8 @@ window.addEventListener("focus",()=>{
                 icon: 'error',
                 title: 'Validation Error',
                 text: 'Please enter a valid email and Mobile Number!',
+                showConfirmButton: false,
+                timer: 3000
             });
             return false; // Prevent form submission
         }
@@ -157,10 +162,13 @@ window.addEventListener("focus",()=>{
       
       emailjs.send(serviceId, templateId, templateParams).then(
         (response) => {
-                 Swal.fire(
-                    'Message Sent Successfully!',
-                    'Your email has been sent.',
-                    'success'
+                 Swal.fire({
+                    text:'Message Sent Successfully!',
+                    title:'Your email has been sent.',
+                    icon:'success',
+                    showConfirmButton: false,
+                    timer: 3000
+                }
                 );
         },
         (error) => {
@@ -169,6 +177,8 @@ window.addEventListener("focus",()=>{
                     icon: 'error',
                     title: 'Oops...',
                     text: 'Something went wrong while sending the email!',
+                    showConfirmButton: false,
+                    timer: 3000
                 });
         },
       );
