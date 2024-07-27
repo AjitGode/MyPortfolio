@@ -114,12 +114,29 @@ window.addEventListener("focus",()=>{
         let mobile = document.getElementById("mobile").value;
         let message = document.getElementById("message").value;
 
+        // Regular expression for validating email format
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Regular expression for validating Indian mobile number format
+    let mobilePattern = /^[6-9]\d{9}$/;
+
         if (!name || !email || !mobile || !message) {
             // Show an error message if any field is blank
             Swal.fire({
                 icon: 'error',
                 title: 'Validation Error',
                 text: 'Please fill in all the fields before submitting!',
+            });
+            return false; // Prevent form submission
+        }
+
+
+        if (!emailPattern.test(email) || !mobilePattern.test(mobile)) {
+            // Show an error message if the email and mobile number is invalid
+            Swal.fire({
+                icon: 'error',
+                title: 'Validation Error',
+                text: 'Please enter a valid email and Mobile Number!',
             });
             return false; // Prevent form submission
         }
